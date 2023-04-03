@@ -108,7 +108,7 @@ define Package/qemu-nbd
  SUBMENU:=Virtualization
  TITLE:=QEMU Network Block Device Utility
  URL:=http://www.qemu.org
- DEPENDS:=+glib2 $(QEMU_DEPS_IN_HOST) +kmod-nbd
+ DEPENDS:=+glib2 +libaio +KERNEL_IO_URING:liburing $(QEMU_DEPS_IN_HOST) +kmod-nbd
 endef
 
 define Package/qemu-nbd/install
