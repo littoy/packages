@@ -395,8 +395,8 @@ CONFIGURE_ARGS +=			\
 	--disable-libpmem		\
 	--disable-libssh		\
 	--$(if $(CONFIG_QEMU_DEV_USB),enable,disable)-libusb		\
-	--disable-linux-aio		\
-	--disable-linux-io-uring	\
+	--$(if $(CONFIG_KERNEL_AIO),enable,disable)-linux-aio		\
+	--$(if $(CONFIG_KERNEL_IO_URING),enable,disable)-linux-io-uring	\
 	--disable-lzfse			\
 	--disable-lzo			\
 	--disable-modules		\
