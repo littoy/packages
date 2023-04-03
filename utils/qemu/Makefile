@@ -67,6 +67,7 @@ define Package/qemu-ga/install
 endef
 
 PKG_CONFIG_DEPENDS += CONFIG_PACKAGE_qemu-ga
+PKG_CONFIG_DEPENDS += CONFIG_PACKAGE_libaio
 
 
 define Package/qemu-bridge-helper
@@ -92,7 +93,7 @@ define Package/qemu-img
  SUBMENU:=Virtualization
  TITLE:=QEMU Image utility
  URL:=http://www.qemu.org
- DEPENDS:=+glib2 $(QEMU_DEPS_IN_HOST)
+ DEPENDS:=+glib2 +libaio +KERNEL_IO_URING:liburing $(QEMU_DEPS_IN_HOST)
 endef
 
 define Package/qemu-img/install
