@@ -192,7 +192,7 @@ define qemu-target
     SUBMENU:=Virtualization
     TITLE:=QEMU target $(1)
     URL:=http://www.qemu.org
-    DEPENDS:= +glib2 +libpthread +zlib +libbpf $(QEMU_DEPS_IN_HOST) $(qemu-target-$(1)-deps) \
+    DEPENDS:= +glib2 +libpthread +zlib +libbpf +libaio +KERNEL_IO_URING:liburing $(QEMU_DEPS_IN_HOST) $(qemu-target-$(1)-deps) \
 	+QEMU_UI_VNC:qemu-keymaps \
 	+QEMU_UI_VNC:libpng \
 	+QEMU_UI_VNC_JPEG:libjpeg \
